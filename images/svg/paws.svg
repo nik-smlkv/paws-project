@@ -1,5 +1,5 @@
-<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-	<g clip-path="url(#clip0_2_616)" id="pawsicon">
+<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"  class="paws-icon" style="transition	0.3s">
+	<symbol id="pawsicon" viewBox="0 0 28 28">
 		<path
 			d="M21.508 17.9979C22.0277 18.367 21.1553 18.4177 21.508 18.7694C16.5636 16.3044 11.2664 19.4744 6.32202 18.0645C9.61879 15.1131 7.80128 9.88193 13.3859 8.55604C16.7219 7.76427 18.7121 11.5943 19.5599 14.8728C19.872 16.0815 20.547 17.17 21.495 17.9849C21.4993 17.9892 21.5051 17.9936 21.5095 17.9965L21.508 17.9979Z"
 			fill="var(--svg-fill)" />
@@ -18,10 +18,5 @@
 		<path
 			d="M25.22 16.3666C26.7554 16.3666 28 14.7251 28 12.7002C28 10.6752 26.7554 9.03371 25.22 9.03371C23.6847 9.03371 22.4401 10.6752 22.4401 12.7002C22.4401 14.7251 23.6847 16.3666 25.22 16.3666Z"
 			fill="var(--svg-fill)" />
-	</g>
-	<defs>
-		<clipPath id="clip0_2_616">
-			<rect width="28" height="28" fill="white" />
-		</clipPath>
-	</defs>
+	</symbol>
 </svg>
