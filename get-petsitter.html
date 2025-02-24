@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Найти петситтера</title>
+    <link rel="stylesheet" href="./fonts/font.css" />
+    <link rel="stylesheet" href="./css/globals.css" />
+    <link rel="stylesheet" href="./css/variables.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header class="header header-style-white">
+        <div class="header__body flex-style-row">
+          <div class="header__logo flex-style-row">
+            <a href="/"
+              ><img src="./images/svg/paws.svg" alt="paws-logo" /><span
+                >Paws & Pals</span
+              ></a
+            >
+          </div>
+          <nav class="header__nav">
+            <ul class="flex-style-row">
+              <li class="link-active">
+                <a href="./get-petsitter.html">Найти петситтера</a>
+              </li>
+              <li><a href="#services">Услуги</a></li>
+              <li><a href="./about-us.html">О нас</a></li>
+              <li><a href="#questions">Частые вопросы</a></li>
+              <li><a href="#getsitter">Стать ситтером</a></li>
+            </ul>
+          </nav>
+          <button
+            type="button"
+            class="button header__button flex-style-row button-hover"
+            onclick="location.href='auth.html'"
+          >
+            <span>Войти</span>
+            <svg
+              width="18"
+              height="19"
+              viewBox="0 0 18 19"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1 17.5L17 1.5M17 1.5V17.5M17 1.5H1"
+                stroke="#C45F27"
+                stroke-width="1.5"
+              />
+            </svg>
+          </button>
+        </div>
+      </header>
+      <section class="no-container">
+        <img
+          src="/images/main-petsitter.jpg"
+          alt="Главная картинка страницы"
+          class="main-img"
+        />
+      </section>
+      <main class="main flex-style-column main-style">
+        <section>
+          <h1 class="title main__title">
+            надежная передержка для вашего питомца<img
+              src="./images/svg/paws-title.svg"
+              alt="paws-title"
+              class="title-icon"
+            />
+          </h1>
+          <form action="#" class="filter flex-style-row form-style">
+            <div class="input__block flex-style-column">
+              <div class="flex-style-column">
+                <p>У меня</p>
+                <div class="inputs-checkbox flex-style-row">
+                  <div class="custom-checkbox input-width">
+                    <input
+                      type="checkbox"
+                      class="input-checkbox-button-style"
+                      name="change-cat"
+                    />
+                    <label class="input-checkbox-style" for="change-cat">
+                      🐈 Кот
+                    </label>
+                  </div>
+                  <div class="custom-checkbox input-width">
+                    <input
+                      type="checkbox"
+                      class="input-checkbox-button-style"
+                      name="change-dog"
+                    />
+                    <label class="input-checkbox-style" for="change-dog">
+                      🦮 Собака
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="flex-style-column">
+                <p>Возраст питомца</p>
+                <div class="inputs-checkbox flex-style-row">
+                  <input
+                    type="text"
+                    placeholder="лет"
+                    class="input-border-style"
+                  />
+                  <input
+                    type="text"
+                    placeholder="месяцев"
+                    class="input-border-style"
+                  />
+                </div>
+              </div>
+              <div class="flex-style-column">
+                <p>Размер</p>
+                <div class="inputs-checkbox flex-style-row">
+                  <div class="custom-checkbox">
+                    <input
+                      type="checkbox"
+                      class="input-checkbox-button-style"
+                    />
+                    <label class="input-checkbox-style" for="">до 5 кг</label>
+                  </div>
+                  <div class="custom-checkbox">
+                    <input
+                      type="checkbox"
+                      class="input-checkbox-button-style"
+                    />
+                    <label class="input-checkbox-style" for=""
+                      >до 5-10 кг</label
+                    >
+                  </div>
+                  <div class="custom-checkbox">
+                    <input
+                      type="checkbox"
+                      class="input-checkbox-button-style"
+                    />
+                    <label class="input-checkbox-style" for="">10-20 кг</label>
+                  </div>
+                  <div class="custom-checkbox">
+                    <input
+                      type="checkbox"
+                      class="input-checkbox-button-style"
+                    />
+                    <label class="input-checkbox-style" for="">20-40 кг</label>
+                  </div>
+                  <div class="custom-checkbox">
+                    <input
+                      type="checkbox"
+                      class="input-checkbox-button-style"
+                    />
+                    <label class="input-checkbox-style" for="">40+ кг</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="input__block flex-style-column block-height">
+              <div class="flex-style-column">
+                <p>Дата передержки</p>
+                <div class="inputs-checkbox flex-style-row input-date">
+                  <div class="custom-input-date">
+                    <input
+                      class="input-date"
+                      type="date"
+                      name="date"
+                      placeholder="с"
+                      onchange="this.className=(this.value!=''?'has-value':'')"
+                      required
+                    />
+                  </div>
+                  <div class="">
+                    <input
+                      class="input-date"
+                      type="date"
+                      name="date"
+                      placeholder="по"
+                      onchange="this.className=(this.value!=''?'has-value':'')"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="flex-style-column block-height">
+                <p>Адрес</p>
+                <div class="custom-select">
+                  <div class="selected">Выберите город</div>
+                  <div class="options">
+                    <div class="option" data-value="Минск">Минск</div>
+                    <div class="option" data-value="Витебск">Витебск</div>
+                    <div class="option" data-value="Брест">Брест</div>
+                    <div class="option" data-value="Гомель">Гомель</div>
+                    <div class="option" data-value="Могилев">Могилев</div>
+                  </div>
+                  <svg
+                    width="20"
+                    class="arrow"
+                    height="9"
+                    viewBox="0 0 20 9"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1 1.5L9.38606 8.02249C9.74717 8.30335 10.2528 8.30335 10.6139 8.02249L19 1.5"
+                      stroke="#6F6F6F"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <button
+                class="flex-style-row button button-text-style button-hover"
+              >
+                Найти петситтера
+                <svg
+                  width="28"
+                  height="28"
+                  viewBox="0 0 38 38"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="pawsicon"
+                >
+                  <use xlink:href="./images/svg/paws.svg#pawsicon"></use>
+                </svg>
+              </button>
+            </div>
+          </form>
+        </section>
+        <section class="reviews flex-style-column">
+          <div class="block-second__title flex-style-row">
+            <p class="block__name">Отзывы</p>
+            <div class="second-title__block">
+              <h2 class="second__title">
+                Что говорят о наших <span>петситтерах</span>
+              </h2>
+            </div>
+          </div>
+          <div class="slide__block">
+            <div class="slide__content flex-style-row">
+              <div class="user__info flex-style-row">
+                <img
+                  src="./images/reviews/diana-reviews.png"
+                  alt="user-diana-image"
+                />
+                <div class="user__description">
+                  <p class="content__name">Диана</p>
+                  <p class="content__subtitle">владелица кота Найта</p>
+                </div>
+              </div>
+              <div class="user__text flex-style-column">
+                <p>
+                  «Я нашла отличного петситтера для своего кота и теперь могу
+                  спокойно ездить в командировки! Очень удобно и просто!»
+                </p>
+                <p>
+                  Я нашла отличного петситтера для своего кота и теперь могу
+                  спокойно ездить в командировки! Очень удобно и просто!»
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="contacts flex-style-column">
+          <div class="block-second__title flex-style-row">
+            <p class="block__name">Контакты</p>
+            <div class="second-title__block">
+              <h2 class="second__title">
+                остались <span>вопросы?</span
+                ><img src="./images/svg/paws-title.svg" alt="paws-title" />
+              </h2>
+            </div>
+          </div>
+          <div class="flex-style-row block">
+            <div class="contact__info flex-style-column">
+              <p class="contact__number">+375 (29) 328-43-56</p>
+              <p>
+                По любым вопросам или дополнительной информации обращайтесь к
+                нам по адресу:
+              </p>
+              <a href="mailto:info@PAWS&PALS" class="contact__mail"
+                >info@PAWS&PALS <img src="./images/svg/arrow.svg" alt="arrow"
+              /></a>
+            </div>
+            <form class="form flex-style-column form-style">
+              <div class="inputs__content flex-style-row">
+                <label class="input__container" for="input__name">
+                  <p class="input__placeholder">Ваше имя</p>
+                  <input
+                    type="name"
+                    class="input__name input-style"
+                    name="input__name"
+                  />
+                </label>
+                <label class="input__container" for="input__mail">
+                  <p class="input__placeholder">E-mail</p>
+                  <input
+                    type="mail"
+                    class="input__mail input-style"
+                    name="input__mail"
+                  />
+                </label>
+                <label class="input__container" for="input__phone">
+                  <p class="input__placeholder">Номер телефона</p>
+                  <input
+                    type="phone"
+                    class="input__phone input-style"
+                    name="input__phone"
+                  />
+                </label>
+                <label class="input__container" for="input__text">
+                  <p class="input__placeholder">Ваш вопрос</p>
+                  <input
+                    type="text"
+                    class="input__text input-style"
+                    name="input__text"
+                  />
+                </label>
+                <label class="input__container input-radio" for="input__radio">
+                  <input
+                    type="radio"
+                    class=""
+                    class="input__radio"
+                    name="input__radio"
+                  />
+                  I have read and accepted the Terms and Conditions and Privacy
+                  Policy.
+                </label>
+              </div>
+              <button
+                class="form__button flex-style-row button button-text-style button-hover"
+              >
+                <span>Отправить</span>
+                <svg
+                  width="46"
+                  height="48"
+                  viewBox="0 0 38 38"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="pawsicon"
+                >
+                  <use xlink:href="./images/svg/paws.svg#pawsicon"></use>
+                </svg>
+              </button>
+            </form>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer__body flex-style-column">
+          <div class="footer__block">
+            <h2 class="footer__title">Контакты</h2>
+            <p class="footer__subtitle">
+              Если у вас возникли вопросы или предложения, пожалуйста, свяжитесь
+              с нами! Мы всегда рады помочь вам.
+            </p>
+          </div>
+          <div class="flex-style-row footer__content">
+            <div class="footer__logo">
+              <img src="./images/svg/paws.svg" alt="paws-logo" /><span
+                >Paws & Pals</span
+              >
+            </div>
+            <div class="flex-style-column footer__info">
+              <div class="flex-style-row footer__links">
+                <ul class="flex-style-column">
+                  <li><a href="#">Передержка кошек</a></li>
+                  <li><a href="#">Передержка собак</a></li>
+                  <li><a href="#">Выгул собак </a></li>
+                </ul>
+                <ul class="flex-style-column">
+                  <li><a href="#">О нас </a></li>
+                  <li><a href="#">Блог </a></li>
+                  <li><a href="#">Контакты</a></li>
+                </ul>
+              </div>
+              <div class="flex-style-row footer__address">
+                <div class="adress flex-style-column">
+                  <p>Минск, курчатова, 5</p>
+                  <div class="social flex-style-row">
+                    <a href="#"
+                      ><img src="./images/svg/logo-tg.svg" alt="telegram"
+                    /></a>
+                    <a href="#"
+                      ><img src="./images/svg/logo-vk.svg" alt="vkontakte"
+                    /></a>
+                    <a href="#"
+                      ><img src="./images/svg/logo-youtube.svg" alt="youtube"
+                    /></a>
+                  </div>
+                </div>
+                <div class="info flex-style-column">
+                  <a href="tel:+375297766601">+375 (29) 776-66-01</a>
+                  <a href="mailto:paws&pals.support@gmail.com"
+                    >paws&pals.support@gmail.com</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="politic flex-style-row">
+            <a href="#">Условия использования</a>
+            <a href="#">Политика конфиденциальности</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

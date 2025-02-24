@@ -1,0 +1,22 @@
+:root {
+	--font-wght: 400;
+	--font-wdth: 300;
+	--font-size: 16px;
+	--line-height: 130%;
+	--text-color: #2B1B09;
+	--bl-color: rgba(0, 0, 0, 1);
+	--btn-color: #C45F27;
+	--svg-fill: #C45F27;
+	--icon-red-color: #FF0000;
+	--border: 1px solid var(--btn-color);
+	--bg-main: #EDE9E0;
+	--bg-block: #442914;
+	--wh-color: rgba(255, 255, 255, 1);
+	--text-shadow: rgba(255, 255, 255, 1);
+	--font-main: "Inter", fantasy, sans-serif;
+	--logo-color: #C45F27;
+	--ft-info-color: #9F856C;
+	--input-color: #646462;
+	--input-text-color: #5F5E5D;
+	--beige-color: #F4DFC4;
+}
