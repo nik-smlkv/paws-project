@@ -3,7 +3,7 @@
 	font-variation-settings: "wght" var(--font-wght), "wdth" var(--font-wdth);
 	font-size: var(--font-size);
 	color: var(--text-color);
-
+	background-color: var(--bg-main);
 }
 
 .main section:not(.no-container),
@@ -16,6 +16,48 @@
 	padding: 0px 20px;
 }
 
+.burger {
+	cursor: pointer;
+	display: none;
+	flex-direction: column;
+}
+
+.line {
+	width: 25px;
+	height: 3px;
+	background-color: white;
+	margin: 4px 0;
+}
+
+.nav {}
+
+.nav.active {
+	display: block;
+
+}
+
+.nav li {
+	padding: 10px;
+	text-align: center;
+}
+
+.nav a {
+	color: white;
+	text-decoration: none;
+}
+
+
+@media (max-width: 768px) {
+	.nav {
+		position: absolute;
+		right: 0;
+		top: 66px;
+		width: 20%;
+		min-height: 100%;
+	}
+}
+
+
 .header-style-white *,
 .header-style-white .header__logo a span {
 	color: var(--wh-color);
@@ -25,13 +67,21 @@
 	border: 1px solid var(--wh-color);
 }
 
+.header-style-white .header__logo {
+	--svg-fill: white;
+}
+
+.header-style-white .header__logo span {
+	color: var(--wh-color);
+}
+
 .header-style-white button svg path {
 	stroke: white;
 }
 
 .main {
 
-	margin-bottom: 140px;
+	padding-bottom: 140px;
 	background-color: var(--bg-main);
 }
 
@@ -45,6 +95,10 @@
 
 .main__title {
 	text-align: center;
+}
+
+.main-petsitter {
+	padding-bottom: 0;
 }
 
 .header {
@@ -77,7 +131,7 @@
 	transition: color 0.3s ease;
 }
 
-.header__nav ul li::after {
+.header__nav ul li a::after {
 	content: '';
 	position: absolute;
 	left: 0;
@@ -91,13 +145,13 @@
 	transition: transform 0.3s ease;
 }
 
-.header__nav ul li:hover::after,
-li.link-active::after {
+.header__nav ul li a:hover::after,
+.link-active::after {
 	transform: scaleX(1);
 }
 
 .header__nav ul li:hover,
-li.link-active::after {
+a.link-active {
 	color: var(--btn-color);
 }
 
@@ -110,18 +164,18 @@ li.link-active::after {
 }
 
 .header__logo span {
-	--font-size: 28px;
+	--font-size: clamp(16px, 3vw, 28px);
 	font-size: var(--font-size);
 	color: var(--logo-color);
 }
 
 .main {
-	gap: 140px;
+	gap: clamp(70px, 3vw, 140px);
 }
 
 .button {
 	text-transform: uppercase;
-	border-radius: 50px;
+	border-radius: clamp(20px, 2vw, 50px);
 	border: var(--border);
 	color: var(--btn-color);
 	align-items: center;
@@ -130,9 +184,9 @@ li.link-active::after {
 }
 
 .button-text-style {
-	--font-size: 25px;
+	--font-size: clamp(17px, 3vw, 25px);
 	font-size: var(--font-size);
-	padding: 25px;
+	padding: clamp(10px, 4vw, 25px);
 }
 
 
@@ -140,17 +194,18 @@ li.link-active::after {
 .header__button {
 	padding: 15px 40px;
 	gap: 6px;
-	border-radius: 30px;
+	border-radius: clamp(15px, 3vw, 30px);
 }
 
-.main__section {
+.main__section {}
+
+.main-style-petsitter {
+	padding-top: clamp(80px, 4vw, 163px);
 }
-.main-style-petsitter{
-	padding-top: 80px;
-}
+
 .title {
 	text-transform: uppercase;
-	--font-size: 94px;
+	--font-size: clamp(27px, 6vw, 94px);
 	font-size: var(--font-size);
 }
 
@@ -160,12 +215,13 @@ li.link-active::after {
 }
 
 .main__img {
-	border-radius: 100px;
+	border-radius: clamp(40px, 7vw, 100px);
 	margin-bottom: 10px;
 }
 
 .main__row {
-	gap: 47px;
+	column-gap: clamp(20px, 2vw, 47px);
+	row-gap: 20px;
 }
 
 .main__button {
@@ -174,13 +230,13 @@ li.link-active::after {
 }
 
 .main__text {
-	--font-size: 100px;
+	--font-size: clamp(27px, 6vw, 100px);
 	text-transform: uppercase;
 	font-size: var(--font-size);
 }
 
 .second__title {
-	--font-size: 64px;
+	--font-size: clamp(27px, 5vw, 64px);
 	display: flex;
 	flex-direction: column;
 	font-size: var(--font-size);
@@ -199,14 +255,15 @@ li.link-active::after {
 
 .block-second__title {
 	justify-content: start;
+	row-gap: 20px;
 }
 
 .block__name {
-	flex: 1 0 auto;
-	--font-size: 20px;
+	flex: 0 0 auto;
+	--font-size: clamp(17px, 3vw, 20px);
 	--border: 1px solid var(--text-color);
 	display: inline-flex;
-	border-radius: 30px;
+	border-radius: clamp(20px, 3vw, 30px);
 	align-self: start;
 	padding: 10px 30px;
 	text-transform: uppercase;
@@ -220,7 +277,7 @@ li.link-active::after {
 }
 
 .button-circle {
-	--font-size: 22px;
+	--font-size: clamp(17px, 3vw, 22px);
 	font-size: var(--font-size);
 	height: 220px;
 	width: 220px;
@@ -275,7 +332,7 @@ body {
 
 .services__card figcaption {
 	position: absolute;
-	--font-size: 20px;
+	--font-size: clamp(17px, 3vw, 20px);
 	font-size: var(--font-size);
 	bottom: 40px;
 	z-index: 10;
@@ -292,9 +349,9 @@ body {
 }
 
 .advantages {
-	padding: 100px;
+	padding: clamp(20px, 5vw, 100px);
 	color: var(--wh-color);
-	border-radius: 40px;
+	border-radius: clamp(20px, 3vw, 40px);
 	background-color: var(--bg-block);
 }
 
@@ -321,7 +378,7 @@ body {
 }
 
 .advantages__body {
-	gap: 50px;
+	gap: clamp(30px, 3vw, 50px);
 }
 
 .advantages__list li {
@@ -340,7 +397,7 @@ body {
 }
 
 .text__title {
-	--font-size: 30px;
+	--font-size: clamp(17px, 3vw, 30px);
 	font-size: var(--font-size);
 	text-transform: uppercase;
 }
@@ -362,6 +419,10 @@ body {
 	position: relative;
 }
 
+.block__img img {
+	border-radius: clamp(20px, 5vw, 40px);
+}
+
 .button-absolute {
 	position: absolute;
 	right: 30px;
@@ -379,6 +440,11 @@ body {
 
 .reviews {
 	gap: 50px;
+	position: relative;
+}
+
+.reviews .block-second__title {
+	margin-bottom: 50px;
 }
 
 .user__info {
@@ -390,7 +456,7 @@ body {
 }
 
 .content__name {
-	--font-size: 30px;
+	--font-size: clamp(17px, 3vw, 30px);
 	font-size: var(--font-size);
 
 }
@@ -398,7 +464,7 @@ body {
 .content__subtitle {}
 
 .user__text {
-	--font-size: 24px;
+	--font-size: clamp(17px, 3vw, 24px);
 	font-size: var(--font-size);
 	align-self: start;
 	gap: 20px;
@@ -423,15 +489,17 @@ body {
 }
 
 .contact__number {
-	--font-size: 28px;
+	--font-size: clamp(17px, 3vw, 28px);
 	font-size: var(--font-size);
 	margin-bottom: 6px;
 }
 
 .contact__mail {
-	display: inline;
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
 	width: 235px;
-	--font-size: 23px;
+	--font-size: clamp(17px, 3vw, 23px);
 	text-transform: uppercase;
 	text-decoration-color: var(--btn-color);
 	font-size: var(--font-size);
@@ -491,15 +559,22 @@ body {
 .footer__logo {
 	flex: 1 1 50%;
 	align-self: start;
+	display: flex;
+	align-items: center;
 	text-transform: uppercase;
-	--font-size: 40px;
+	--font-size: clamp(20px, 3vw, 40px);
 	--font-wght: 500;
 	font-size: var(--font-size);
 	font-weight: var(--font-wght);
 	color: var(--wh-color);
 }
 
-
+.footer__logo a {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+	--svg-fill: white;
+}
 
 .footer__body {
 	gap: 40px;
@@ -515,12 +590,12 @@ body {
 
 .footer__title {
 	text-transform: uppercase;
-	--font-size: 140px;
-	font-size: 140px;
+	--font-size: clamp(20px, 8vw, 140px);
+	font-size: var(--font-size);
 }
 
 .footer__subtitle {
-	--font-size: 22px;
+	--font-size: clamp(17px, 2vw, 22px);
 	font-size: var(--font-size);
 	max-width: 690px;
 	justify-self: end;
@@ -653,7 +728,7 @@ body {
 	gap: 40px;
 }
 
-.form-style {
+.form-style-auth {
 	padding: 40px 140px;
 	background-color: var(--wh-color);
 	border-radius: 40px;
@@ -709,7 +784,7 @@ body {
 	background-color: var(--btn-color);
 	--svg-fill: var(--wh-color);
 	color: var(--wh-color);
-	--font-size: 22px;
+	--font-size: clamp(17vw, 2vw, 22px);
 	font-size: var(--font-size);
 }
 
@@ -745,7 +820,7 @@ body {
 	align-items: center;
 	justify-content: center;
 	gap: 4px;
-	--font-size: 18px;
+	--font-size: clamp(15px, 3vw, 18px);
 	--font-wght: 500;
 	font-size: var(--font-size);
 	font-variation-settings: "wght" var(--font-wght), "wdth" var(--font-wdth);
@@ -823,7 +898,7 @@ body {
 }
 
 .text-register {
-	--font-size: 32px;
+	--font-size: clamp(16px, 3vw, 32px);
 	font-size: var(--font-size);
 	max-width: 506px;
 	text-align: center;
@@ -837,7 +912,7 @@ body {
 }
 
 .buttons__block button {
-	--font-size: 22px;
+	--font-size: clamp(16px, 2vw, 22px);
 	font-size: var(--font-size);
 	max-width: 380px;
 }
@@ -946,7 +1021,7 @@ body {
 }
 
 .input__block p {
-	--font-size: 24px;
+	--font-size: clamp(15px, 2vw, 24px);
 	--font-wght: 500;
 	margin-bottom: 20px;
 	font-variation-settings: "wght" var(--font-wght), "wdth" var(--font-wdth);
@@ -960,6 +1035,12 @@ body {
 	gap: 120px;
 	padding: 40px 184px 60px;
 	align-items: start;
+	background-color: var(--wh-color);
+	border-radius: 40px;
+}
+
+.filter-block {
+	gap: 60px;
 }
 
 .input-checkbox-style {
@@ -1003,7 +1084,7 @@ body {
 }
 
 .input-checkbox-style {
-	--font-size: 20px;
+	--font-size: clamp(15px, 2vw, 20px);
 	justify-content: center;
 	font-size: var(--font-size);
 }
@@ -1041,7 +1122,7 @@ body {
 	height: 42px;
 	position: relative;
 	background-color: var(--wh-color);
-	z-index: 5;
+	z-index: 2;
 	transition: height 0.3s ease-out;
 	overflow: hidden;
 }
@@ -1201,4 +1282,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 	content: attr(placeholder);
 	width: 100%;
 	color: #6F6F6F;
+}
+
+@media(max-width:1299.99px) {
+	.advantages__content {
+		flex-direction: column;
+	}
+
+	.block-second__title {
+		flex-wrap: wrap;
+	}
 }

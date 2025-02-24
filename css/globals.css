@@ -92,3 +92,40 @@ main {
 	object-fit: cover;
 	object-position: center;
 }
+
+img {
+	width: 100%;
+	height: auto;
+}
+
+.swiper {
+	width: 100%;
+}
+
+.swiper-css-mode .swiper-button-next,
+.swiper-css-mode .swiper-button-prev {
+	position: absolute;
+	width: 53px;
+	height: 53px;
+}
+
+.swiper-css-mode .swiper-button-next::after,
+.swiper-css-mode .swiper-button-prev::after {
+	content: '';
+}
+
+.swiper-css-mode .swiper-button-next {
+	top: 33px;
+	right: 0;
+	z-index: 100;
+	border-radius: 100%;
+	border: var(--border);
+}
+
+.swiper-css-mode .swiper-button-prev {
+	top: 33px;
+	left: 91%;
+	z-index: 100;
+	border-radius: 100%;
+	border: var(--border);
+}

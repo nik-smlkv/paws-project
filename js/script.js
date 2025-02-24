@@ -5,12 +5,10 @@ const scrollHeader = () => {
 }
 window.addEventListener("scroll", scrollHeader);
 
-
-
 const handleChoiseRegister = () => {
 	const registerContent = document.querySelector('.register__body');
 	registerContent.innerHTML = '';
-	const getForm = registerContent.insertAdjacentHTML('beforeend', ` <form action="#" class="sign-up form-style flex-style-column">
+	const getForm = registerContent.insertAdjacentHTML('beforeend', ` <form action="#" class="sign-up form-style-auth flex-style-column">
 						<div class="auth-services flex-style-column">
 							<p class="paragraph-margin">Войдите через сервисы:</p>
 							<div class="auth-link flex-style-row">
@@ -71,11 +69,19 @@ const buttonsBlock = document.querySelectorAll('.buttons__block');
 buttonsBlock.forEach(button => button.addEventListener("click", handleChoiseRegister))
 
 
+const burger = document.getElementById('burger');
+const nav = document.getElementById('nav');
+console.log(burger);
+console.log(nav);
+burger.addEventListener('click', () => {
+	nav.classList.toggle('active');
+});
+
 
 
 const customSelect = document.querySelector('.custom-select');
-const selected = customSelect.querySelector('.selected');
-const optionsContainer = customSelect.querySelector('.options');
+const selected = customSelect?.querySelector('.selected');
+const optionsContainer = customSelect?.querySelector('.options');
 
 // Функция для открытия/закрытия выпадающего списка
 const toggleOptions = () => {
@@ -89,9 +95,9 @@ const toggleOptions = () => {
 	}
 };
 
-customSelect.addEventListener('click', toggleOptions);
+customSelect?.addEventListener('click', toggleOptions);
 
-customSelect.querySelectorAll('.option').forEach(option => {
+customSelect?.querySelectorAll('.option').forEach(option => {
 	option.addEventListener('click', () => {
 		selected.textContent = option.textContent;
 		optionsContainer.style.maxHeight = null;
@@ -101,8 +107,24 @@ customSelect.querySelectorAll('.option').forEach(option => {
 
 // Закрыть выпадающий список при клике вне его
 document.addEventListener('click', (event) => {
-	if (!customSelect.contains(event.target)) {
+	if (!customSelect?.contains(event.target)) {
 		optionsContainer.style.maxHeight = null;
 		customSelect.style.height = 60 + 'px';
 	}
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+	const swiper = new Swiper('.swiper', {
+		loop: true,
+		cssMode: true,
+		pagination: {
+			el: '.swiper-pagination',
+			clickable: true,
+		},
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+	});
+	return swiper
 });
