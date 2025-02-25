@@ -15,29 +15,34 @@
 	<div class="wrapper flex-style-column">
 		<header class="header">
 			<div class="header__body flex-style-row">
-				<div class="header__logo flex-style-row">
-					<a href="/"><svg width="28" height="28" viewBox="0 0 38 38" fill="none"
-							xmlns="http://www.w3.org/2000/svg" class="pawsicon">
-							<use xlink:href="./images/svg/paws.svg#pawsicon"></use>
-						</svg><span>Paws & Pals</span></a>
-				</div>
+				<a class="header__logo flex-style-row" href="/">
+					<svg width="28" height="28" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg"
+						class="pawsicon">
+						<use xlink:href="./images/svg/paws.svg#pawsicon"></use>
+					</svg><span>Paws & Pals</span></a>
 				<nav class="header__nav">
 					<ul class="flex-style-row">
-						<li class="link-active">
-							<a href="./get-petsitter.html">Найти петситтера</a>
-						</li>
+						<li><a href="./get-petsitter.html">Найти петситтера</a></li>
 						<li><a href="#services">Услуги</a></li>
 						<li><a href="./about-us.html">О нас</a></li>
 						<li><a href="#questions">Частые вопросы</a></li>
 						<li><a href="#getsitter">Стать ситтером</a></li>
 					</ul>
 				</nav>
-				<button type="button" class="button header__button flex-style-row button-hover">
-					<span>Войти</span>
-					<svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M1 17.5L17 1.5M17 1.5V17.5M17 1.5H1" stroke="#C45F27" stroke-width="1.5" />
-					</svg>
-				</button>
+				<div class="header-block flex-style-row">
+					<button type="button" class="header__button button  flex-style-row button-hover"
+						onclick="location.href='auth.html'">
+						<span>Войти</span>
+						<svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M1 17.5L17 1.5M17 1.5V17.5M17 1.5H1" stroke="#C45F27" stroke-width="1.5" />
+						</svg>
+					</button>
+					<div class="header__burger">
+						<div class="line"></div>
+						<div class="line"></div>
+						<div class="line"></div>
+					</div>
+				</div>
 			</div>
 		</header>
 		<main class="main flex-style-column main-style">

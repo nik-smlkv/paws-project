@@ -69,12 +69,11 @@ const buttonsBlock = document.querySelectorAll('.buttons__block');
 buttonsBlock.forEach(button => button.addEventListener("click", handleChoiseRegister))
 
 
-const burger = document.getElementById('burger');
-const nav = document.getElementById('nav');
-console.log(burger);
-console.log(nav);
-burger.addEventListener('click', () => {
-	nav.classList.toggle('active');
+const headerBurger = document.querySelector('.header__burger');
+const headerNavigation = document.querySelector('.header__nav');
+headerBurger.addEventListener('click', () => {
+	headerNavigation.classList.toggle('active');
+	headerBurger.classList.toggle('active-burger');
 });
 
 

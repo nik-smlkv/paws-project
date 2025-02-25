@@ -21,7 +21,7 @@
 						class="pawsicon">
 						<use xlink:href="./images/svg/paws.svg#pawsicon"></use>
 					</svg><span>Paws & Pals</span></a>
-				<nav class="header__nav nav" id="nav">
+				<nav class="header__nav">
 					<ul class="flex-style-row">
 						<li><a href="./get-petsitter.html">Найти петситтера</a></li>
 						<li><a href="#services">Услуги</a></li>
@@ -30,17 +30,19 @@
 						<li><a href="#getsitter">Стать ситтером</a></li>
 					</ul>
 				</nav>
-				<button type="button" class="button header__button flex-style-row button-hover"
-					onclick="location.href='auth.html'">
-					<span>Войти</span>
-					<svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M1 17.5L17 1.5M17 1.5V17.5M17 1.5H1" stroke="#C45F27" stroke-width="1.5" />
-					</svg>
-				</button>
-				<div class="burger" id="burger">
-					<div class="line"></div>
-					<div class="line"></div>
-					<div class="line"></div>
+				<div class="header-block flex-style-row">
+					<button type="button" class="header__button button  flex-style-row button-hover"
+						onclick="location.href='auth.html'">
+						<span>Войти</span>
+						<svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M1 17.5L17 1.5M17 1.5V17.5M17 1.5H1" stroke="#C45F27" stroke-width="1.5" />
+						</svg>
+					</button>
+					<div class="header__burger">
+						<div class="line"></div>
+						<div class="line"></div>
+						<div class="line"></div>
+					</div>
 				</div>
 			</div>
 		</header>
@@ -66,7 +68,7 @@
 					<p class="block__name">Наши услуги</p>
 					<div class="second-title__block">
 						<h2 class="second__title">
-							<span>Позаботимся,</span> пока вы в отъезде
+							<span>Позаботимся,</span>пока вы в отъезде
 						</h2>
 					</div>
 				</div>
@@ -86,13 +88,15 @@
 
 						<figcaption>Выгул и кормление</figcaption>
 					</div>
-					<button class="button-circle flex-style-column button button-text-style">
-						Найти петситтера
-						<svg width="46" height="48" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg"
-							class="pawsicon">
-							<use xlink:href="./images/svg/paws.svg#pawsicon"></use>
-						</svg>
-					</button>
+					<div class="services__button">
+						<button class="button-circle flex-style-column button button-text-style">
+							Найти петситтера
+							<svg width="46" height="48" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg"
+								class="pawsicon">
+								<use xlink:href="./images/svg/paws.svg#pawsicon"></use>
+							</svg>
+						</button>
+					</div>
 				</div>
 			</section>
 			<section class="advantages no-container">
@@ -172,7 +176,7 @@
 					<div class="second-title__block">
 						<div>
 							<h2 class="second__title">
-								Любите животных? <p>станьте <span>петситтером!</span></p>
+								<p>Любите животных? станьте <span>петситтером!</span></p>
 						</div>
 					</div>
 				</div>
@@ -204,7 +208,7 @@
 						<p class="block__name">Отзывы</p>
 						<div class="second-title__block">
 							<h2 class="second__title">
-								Что говорят о наших <span>петситтерах</span>
+							<p>Что говорят о наших <span>петситтерах</span></p>
 							</h2>
 						</div>
 					</div>
