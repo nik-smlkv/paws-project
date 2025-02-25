@@ -84,7 +84,6 @@ const optionsContainer = customSelect?.querySelector('.options');
 
 // Функция для открытия/закрытия выпадающего списка
 const toggleOptions = () => {
-
 	if (optionsContainer.style.maxHeight) {
 		optionsContainer.style.maxHeight = null;
 		customSelect.style.height = 60 + 'px';
@@ -126,4 +125,31 @@ document.addEventListener('DOMContentLoaded', () => {
 		},
 	});
 	return swiper
+});
+
+function showTab(tabName) {
+	const contents = document.querySelectorAll('.tab-content');
+	contents.forEach(content => {
+		content.style.display = 'none';
+	});
+
+	const buttons = document.querySelectorAll('.tab-button');
+	buttons.forEach(button => {
+		button.classList.remove('active');
+	});
+
+	document.getElementById(tabName).style.display = 'flex';
+	document.querySelector(`.tab-button[onclick="showTab('${tabName}')"]`).classList.add('active');
+}
+
+showTab('shelter');
+
+
+$(document).ready(function () {
+	$('.my-range-slider').rangeslider({
+		polyfill: false,
+		onSlide: function (position, value) {
+			$('.js-range-value').text(value);
+		},
+	});
 });

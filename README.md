@@ -1,2 +1,0 @@
-# paws-project
-paws-project
