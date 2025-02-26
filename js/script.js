@@ -98,16 +98,21 @@ customSelect?.addEventListener('click', toggleOptions);
 customSelect?.querySelectorAll('.option').forEach(option => {
 	option.addEventListener('click', () => {
 		selected.textContent = option.textContent;
-		optionsContainer.style.maxHeight = null;
-		customSelect.style.height = 60 + 'px';
+		if (optionsContainer) {
+			optionsContainer.style.maxHeight = null;
+			customSelect.style.height = 60 + 'px';
+		}
+
 	});
 });
 
 // Закрыть выпадающий список при клике вне его
 document.addEventListener('click', (event) => {
 	if (!customSelect?.contains(event.target)) {
-		optionsContainer.style.maxHeight = null;
-		customSelect.style.height = 60 + 'px';
+		if (optionsContainer) {
+			optionsContainer.style.maxHeight = null;
+			customSelect.style.height = 60 + 'px';
+		}
 	}
 });
 
@@ -129,20 +134,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function showTab(tabName) {
 	const contents = document.querySelectorAll('.tab-content');
-	contents.forEach(content => {
+	contents?.forEach(content => {
 		content.style.display = 'none';
 	});
 
 	const buttons = document.querySelectorAll('.tab-button');
-	buttons.forEach(button => {
+	buttons?.forEach(button => {
 		button.classList.remove('active');
 	});
-
-	document.getElementById(tabName).style.display = 'flex';
-	document.querySelector(`.tab-button[onclick="showTab('${tabName}')"]`).classList.add('active');
+	if (tabName) {
+		document.getElementById(tabName).style.display = 'flex';
+		document.querySelector(`.tab-button[onclick="showTab('${tabName}')"]`).classList.add('active');
+	}
 }
-
-showTab('shelter');
+const contents = document.querySelector('.tab-content');
+if (contents) {
+	showTab('shelter');
+}
 
 
 $(document).ready(function () {
@@ -158,15 +166,22 @@ $(document).ready(function () {
 
 ymaps.ready(init);
 function init() {
-	// Создание карты.
 	var myMap = new ymaps.Map("map", {
-		// Координаты центра карты.
-		// Порядок по умолчанию: «широта, долгота».
-		// Чтобы не определять координаты центра карты вручную,
-		// воспользуйтесь инструментом Определение координат.
 		center: [55.76, 37.64],
-		// Уровень масштабирования. Допустимые значения:
-		// от 0 (весь мир) до 19.
 		zoom: 7
 	});
+}
+
+$(document).ready(function () {
+	$('.question__text').click(function () {
+		$(this).parent().addClass('expanded');
+	});
+	$('.question__text-answer').click(function () {
+		$(this).parent().removeClass('expanded');
+	});
+});
+
+function scrollToAbout(element) {
+	const aboutSection = document.getElementById(`${element}`);
+	aboutSection.scrollIntoView({ behavior: 'smooth' }); // Плавный переход к блоку
 }
