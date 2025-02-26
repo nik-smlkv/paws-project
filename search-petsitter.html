@@ -1,331 +1,711 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Найти петситтера</title>
+    <link rel="stylesheet" href="./fonts/font.css" />
+    <link rel="stylesheet" href="./css/globals.css" />
+    <link rel="stylesheet" href="./css/variables.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/rangeslider.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./js/rangeslider.min.js"></script>
+    <script
+      src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=a501dfc8-e03d-4520-a23c-113005ff313c"
+      type="text/javascript"
+    ></script>
+  </head>
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Найти петситтера</title>
-	<link rel="stylesheet" href="./fonts/font.css" />
-	<link rel="stylesheet" href="./css/globals.css" />
-	<link rel="stylesheet" href="./css/variables.css" />
-	<link rel="stylesheet" href="./css/style.css" />
-	<link rel="stylesheet" href="./css/swiper-bundle.min.css" />
-	<link rel="stylesheet" href="./css/rangeslider.css" />
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-	<script src="./js/rangeslider.min.js"></script>
-	<script src="https://api-maps.yandex.ru/2.1/?apikey=029cc9c0-d750-403e-98c4-77662a8db863ч&lang=ru_RU"
-		type="text/javascript">
-		</script>
-</head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="header__body flex-style-row">
+          <a class="header__logo flex-style-row" href="/">
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 38 38"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="pawsicon"
+            >
+              <use xlink:href="./images/svg/paws.svg#pawsicon"></use></svg
+            ><span>Paws & Pals</span></a
+          >
+          <nav class="header__nav">
+            <ul class="flex-style-row">
+              <li><a href="./get-petsitter.html">Найти петситтера</a></li>
+              <li><a href="#services">Услуги</a></li>
+              <li><a href="./about-us.html">О нас</a></li>
+              <li><a href="./questions.html">Частые вопросы</a></li>
+              <li><a href="./become-petsitter.html">Стать ситтером</a></li>
+            </ul>
+          </nav>
+          <div class="header-block flex-style-row">
+            <button
+              type="button"
+              class="header__button button flex-style-row button-hover"
+              onclick="location.href='auth.html'"
+            >
+              <span>Войти</span>
+              <svg
+                width="18"
+                height="19"
+                viewBox="0 0 18 19"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 17.5L17 1.5M17 1.5V17.5M17 1.5H1"
+                  stroke="#C45F27"
+                  stroke-width="1.5"
+                />
+              </svg>
+            </button>
+            <div class="header__burger">
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <section class="no-container">
+        <img
+          src="/images/main-petsitter.jpg"
+          alt="Главная картинка страницы"
+          class="main-img"
+        />
+      </section>
+      <main class="main flex-style-column main-style main-petsitter">
+        <section class="filter-block flex-style-column">
+          <h1 class="title main__title">
+            надежная передержка для вашего питомца<img
+              src="./images/svg/paws-title.svg"
+              alt="paws-title"
+              class="title-icon"
+            />
+          </h1>
+          <form action="#" class="filter flex-style-column form-style">
+            <div class="tabs flex-style-row">
+              <button
+                class="tab-button tab-button-shelter"
+                onclick="showTab('shelter')"
+              >
+                <span class="span-text">Передержка</span
+                ><span class="span-block">дома у петситтера</span>
+              </button>
+              <button
+                class="tab-button tab-button-walk active"
+                onclick="showTab('walk')"
+              >
+                <span class="span-text">Выгул</span
+                ><span class="span-block">в вашем районе</span>
+              </button>
+            </div>
+            <div class="tab-content flex-style-row" id="shelter">
+              <div class="input__block flex-style-column">
+                <div class="flex-style-column">
+                  <p>У меня</p>
+                  <div class="inputs-checkbox flex-style-row">
+                    <div class="custom-checkbox input-width">
+                      <input
+                        type="checkbox"
+                        class="input-checkbox-button-style"
+                        name="change-cat"
+                        checked
+                      />
+                      <label class="input-checkbox-style" for="change-cat">
+                        🐈 Кот
+                      </label>
+                    </div>
+                    <div class="custom-checkbox input-width">
+                      <input
+                        type="checkbox"
+                        class="input-checkbox-button-style"
+                        name="change-dog"
+                      />
+                      <label class="input-checkbox-style" for="change-dog">
+                        🦮 Собака
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex-style-column">
+                  <p>Возраст питомца</p>
+                  <div class="inputs-checkbox flex-style-row">
+                    <input
+                      type="text"
+                      placeholder="лет"
+                      class="input-border-style"
+                    />
+                    <input
+                      type="text"
+                      placeholder="месяцев"
+                      class="input-border-style"
+                    />
+                  </div>
+                </div>
+                <div class="flex-style-column">
+                  <p>Размер</p>
+                  <div class="inputs-checkbox flex-style-row">
+                    <div class="custom-checkbox">
+                      <input
+                        type="checkbox"
+                        class="input-checkbox-button-style"
+                        checked
+                      />
+                      <label class="input-checkbox-style" for="">до 5 кг</label>
+                    </div>
+                    <div class="custom-checkbox">
+                      <input
+                        type="checkbox"
+                        class="input-checkbox-button-style"
+                      />
+                      <label class="input-checkbox-style" for=""
+                        >до 5-10 кг</label
+                      >
+                    </div>
+                    <div class="custom-checkbox">
+                      <input
+                        type="checkbox"
+                        class="input-checkbox-button-style"
+                      />
+                      <label class="input-checkbox-style" for=""
+                        >10-20 кг</label
+                      >
+                    </div>
+                    <div class="custom-checkbox">
+                      <input
+                        type="checkbox"
+                        class="input-checkbox-button-style"
+                      />
+                      <label class="input-checkbox-style" for=""
+                        >20-40 кг</label
+                      >
+                    </div>
+                    <div class="custom-checkbox">
+                      <input
+                        type="checkbox"
+                        class="input-checkbox-button-style"
+                      />
+                      <label class="input-checkbox-style" for="">40+ кг</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="input__block flex-style-column block-height">
+                <div class="flex-style-column">
+                  <p>Дата передержки</p>
+                  <div class="inputs-checkbox flex-style-row input-date">
+                    <div class="custom-input-date">
+                      <input
+                        class="input-date"
+                        type="date"
+                        name="date"
+                        placeholder="с"
+                        onchange="this.className=(this.value!=''?'has-value':'')"
+                        required
+                      />
+                    </div>
+                    <div class="custom-input-date">
+                      <input
+                        class="input-date"
+                        type="date"
+                        name="date"
+                        placeholder="по"
+                        onchange="this.className=(this.value!=''?'has-value':'')"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="flex-style-column block-height">
+                  <p>Адрес</p>
+                  <div class="custom-select">
+                    <div class="selected">Выберите город</div>
+                    <div class="options">
+                      <div class="option" data-value="Минск">Минск</div>
+                      <div class="option" data-value="Витебск">Витебск</div>
+                      <div class="option" data-value="Брест">Брест</div>
+                      <div class="option" data-value="Гомель">Гомель</div>
+                      <div class="option" data-value="Могилев">Могилев</div>
+                    </div>
+                    <svg
+                      width="20"
+                      class="arrow"
+                      height="9"
+                      viewBox="0 0 20 9"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M1 1.5L9.38606 8.02249C9.74717 8.30335 10.2528 8.30335 10.6139 8.02249L19 1.5"
+                        stroke="#6F6F6F"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <button
+                  class="flex-style-row button button-text-style button-hover"
+                >
+                  Найти петситтера
+                  <svg
+                    width="28"
+                    height="28"
+                    viewBox="0 0 38 38"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="pawsicon"
+                  >
+                    <use xlink:href="./images/svg/paws.svg#pawsicon"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="tab-content flex-style-row" id="walk">
+              <div class="input__block flex-style-column">
+                <div class="flex-style-column">
+                  <p>У меня</p>
+                  <div class="inputs-checkbox flex-style-row">
+                    <div class="custom-checkbox input-width">
+                      <input
+                        type="checkbox"
+                        class="input-checkbox-button-style"
+                        name="change-cat"
+                        checked
+                      />
+                      <label class="input-checkbox-style" for="change-cat">
+                        🐈 Кот
+                      </label>
+                    </div>
+                    <div class="custom-checkbox input-width">
+                      <input
+                        type="checkbox"
+                        class="input-checkbox-button-style"
+                        name="change-dog"
+                      />
+                      <label class="input-checkbox-style" for="change-dog">
+                        🦮 Собака
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex-style-column">
+                  <p>Возраст питомца</p>
+                  <div class="inputs-checkbox flex-style-row">
+                    <input
+                      type="text"
+                      placeholder="лет"
+                      class="input-border-style"
+                    />
+                    <input
+                      type="text"
+                      placeholder="месяцев"
+                      class="input-border-style"
+                    />
+                  </div>
+                </div>
+                <div class="flex-style-column">
+                  <p>Размер</p>
+                  <div class="inputs-checkbox flex-style-row">
+                    <div class="custom-checkbox">
+                      <input
+                        type="checkbox"
+                        class="input-checkbox-button-style"
+                        checked
+                      />
+                      <label class="input-checkbox-style" for="">до 5 кг</label>
+                    </div>
+                    <div class="custom-checkbox">
+                      <input
+                        type="checkbox"
+                        class="input-checkbox-button-style"
+                      />
+                      <label class="input-checkbox-style" for=""
+                        >до 5-10 кг</label
+                      >
+                    </div>
+                    <div class="custom-checkbox">
+                      <input
+                        type="checkbox"
+                        class="input-checkbox-button-style"
+                      />
+                      <label class="input-checkbox-style" for=""
+                        >10-20 кг</label
+                      >
+                    </div>
+                    <div class="custom-checkbox">
+                      <input
+                        type="checkbox"
+                        class="input-checkbox-button-style"
+                      />
+                      <label class="input-checkbox-style" for=""
+                        >20-40 кг</label
+                      >
+                    </div>
+                    <div class="custom-checkbox">
+                      <input
+                        type="checkbox"
+                        class="input-checkbox-button-style"
+                      />
+                      <label class="input-checkbox-style" for="">40+ кг</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="input__block flex-style-column block-height">
+                <div class="flex-style-column">
+                  <p>Дата передержки</p>
+                  <div class="inputs-checkbox flex-style-row input-date">
+                    <div class="custom-input-date">
+                      <input
+                        class="input-date"
+                        type="date"
+                        name="date"
+                        placeholder="с"
+                        onchange="this.className=(this.value!=''?'has-value':'')"
+                        required
+                      />
+                    </div>
+                    <div class="">
+                      <input
+                        class="input-date"
+                        type="date"
+                        name="date"
+                        placeholder="по"
+                        onchange="this.className=(this.value!=''?'has-value':'')"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="flex-style-column block-height">
+                  <p>Адрес</p>
+                  <div class="custom-select">
+                    <div class="selected">Выберите город</div>
+                    <div class="options">
+                      <div class="option" data-value="Минск">Минск</div>
+                      <div class="option" data-value="Витебск">Витебск</div>
+                      <div class="option" data-value="Брест">Брест</div>
+                      <div class="option" data-value="Гомель">Гомель</div>
+                      <div class="option" data-value="Могилев">Могилев</div>
+                    </div>
+                    <svg
+                      width="20"
+                      class="arrow"
+                      height="9"
+                      viewBox="0 0 20 9"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M1 1.5L9.38606 8.02249C9.74717 8.30335 10.2528 8.30335 10.6139 8.02249L19 1.5"
+                        stroke="#6F6F6F"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div class="flex-style-column block-height">
+                  <p class="range-slider-text">
+                    Максимальная стоимость за 30 мин. прогулки
+                  </p>
+                  <div class="range-slider-block flex-style-row">
+                    <input
+                      type="range"
+                      class="my-range-slider"
+                      min="0"
+                      max="100"
+                      value="30"
+                    />
+                    <div class="flex-style-row">
+                      <p class="js-range-value">30</p>
+                      <span>BYN</span>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  class="flex-style-row button button-text-style button-hover"
+                  onclick=""
+                >
+                  Найти петситтера
+                  <svg
+                    width="28"
+                    height="28"
+                    viewBox="0 0 38 38"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="pawsicon"
+                  >
+                    <use xlink:href="./images/svg/paws.svg#pawsicon"></use>
+                  </svg>
+                </button>
+                <p class="text-center">Сбросить фильтр</p>
+              </div>
+            </div>
+          </form>
+        </section>
+        <section class="find-anouncement__block flex-style-row">
+          <div class="find__cards flex-style-column">
+            <p class="find__title">Найдено <span>200</span> петситтеров</p>
+            <div class="find__card flex-style-row block-space">
+              <img
+                src="./images/preview-image.jpg"
+                alt="preview"
+                class="image-profile"
+              />
+              <div class="card__description flex-style-column">
+                <div class="flex-style-row block-space">
+                  <div class="flex-style-column">
+                    <p class="find-name">Ирина</p>
+                    <p class="find-card-adress">Минск, Фрунзенский район</p>
+                  </div>
+                  <p>от <span class="find-card-cost">20 BYN</span> / зо мин</p>
+                </div>
+                <div class="flex-style-row find-description">
+                  <span class="flex-center">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 38 38"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="pawsicon"
+                    >
+                      <use
+                        xlink:href="./images/svg/paws.svg#pawsicon"
+                      ></use></svg
+                    >5.0</span
+                  ><span>50 отзывов</span>
+                  <span>15 повторных заказов</span>
+                </div>
+                <p class="text-comment">
+                  Очень люблю животных! Присмотрю за вашим любимцем пока вы в
+                  отъезде...
+                </p>
+              </div>
+            </div>
+            <div class="find__card flex-style-row block-space">
+              <img
+                src="./images/preview-image.jpg"
+                alt="preview"
+                class="image-profile"
+              />
+              <div class="card__description flex-style-column">
+                <div class="flex-style-row block-space">
+                  <div class="flex-style-column">
+                    <p class="find-name">Ирина</p>
+                    <p class="find-card-adress">Минск, Фрунзенский район</p>
+                  </div>
+                  <p>от <span class="find-card-cost">20 BYN</span> / зо мин</p>
+                </div>
+                <div class="flex-style-row find-description">
+                  <span class="flex-center">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 38 38"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="pawsicon"
+                    >
+                      <use
+                        xlink:href="./images/svg/paws.svg#pawsicon"
+                      ></use></svg
+                    >5.0</span
+                  ><span>50 отзывов</span>
+                  <span>15 повторных заказов</span>
+                </div>
+                <p class="text-comment">
+                  Очень люблю животных! Присмотрю за вашим любимцем пока вы в
+                  отъезде...
+                </p>
+              </div>
+            </div>
+            <div class="find__card flex-style-row block-space">
+              <img
+                src="./images/preview-image.jpg"
+                alt="preview"
+                class="image-profile"
+              />
+              <div class="card__description flex-style-column">
+                <div class="flex-style-row block-space">
+                  <div class="flex-style-column">
+                    <p class="find-name">Ирина</p>
+                    <p class="find-card-adress">Минск, Фрунзенский район</p>
+                  </div>
+                  <p>от <span class="find-card-cost">20 BYN</span> / зо мин</p>
+                </div>
+                <div class="flex-style-row find-description">
+                  <span class="flex-center">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 38 38"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="pawsicon"
+                    >
+                      <use
+                        xlink:href="./images/svg/paws.svg#pawsicon"
+                      ></use></svg
+                    >5.0</span
+                  ><span>50 отзывов</span>
+                  <span>15 повторных заказов</span>
+                </div>
+                <p class="text-comment">
+                  Очень люблю животных! Присмотрю за вашим любимцем пока вы в
+                  отъезде...
+                </p>
+              </div>
+            </div>
+            <div class="find__card flex-style-row block-space">
+              <img
+                src="./images/preview-image.jpg"
+                alt="preview"
+                class="image-profile"
+              />
+              <div class="card__description flex-style-column">
+                <div class="flex-style-row block-space">
+                  <div class="flex-style-column">
+                    <p class="find-name">Ирина</p>
+                    <p class="find-card-adress">Минск, Фрунзенский район</p>
+                  </div>
+                  <p>от <span class="find-card-cost">20 BYN</span> / зо мин</p>
+                </div>
+                <div class="flex-style-row find-description">
+                  <span class="flex-center">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 38 38"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="pawsicon"
+                    >
+                      <use
+                        xlink:href="./images/svg/paws.svg#pawsicon"
+                      ></use></svg
+                    >5.0</span
+                  ><span>50 отзывов</span>
+                  <span>15 повторных заказов</span>
+                </div>
+                <p class="text-comment">
+                  Очень люблю животных! Присмотрю за вашим любимцем пока вы в
+                  отъезде...
+                </p>
+              </div>
+            </div>
+            <div class="find__card flex-style-row block-space">
+              <img
+                src="./images/preview-image.jpg"
+                alt="preview"
+                class="image-profile"
+              />
+              <div class="card__description flex-style-column">
+                <div class="flex-style-row block-space">
+                  <div class="flex-style-column">
+                    <p class="find-name">Ирина</p>
+                    <p class="find-card-adress">Минск, Фрунзенский район</p>
+                  </div>
+                  <p>от <span class="find-card-cost">20 BYN</span> / зо мин</p>
+                </div>
+                <div class="flex-style-row find-description">
+                  <span class="flex-center">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 38 38"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="pawsicon"
+                    >
+                      <use
+                        xlink:href="./images/svg/paws.svg#pawsicon"
+                      ></use></svg
+                    >5.0</span
+                  ><span>50 отзывов</span>
+                  <span>15 повторных заказов</span>
+                </div>
+                <p class="text-comment">
+                  Очень люблю животных! Присмотрю за вашим любимцем пока вы в
+                  отъезде...
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="yandex-map" id="map"></div>
+        </section>
+      </main>
 
-<body>
-	<div class="wrapper">
-		<header class="header">
-			<div class="header__body flex-style-row">
-				<a class="header__logo flex-style-row" href="/">
-					<svg width="28" height="28" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg"
-						class="pawsicon">
-						<use xlink:href="./images/svg/paws.svg#pawsicon"></use>
-					</svg><span>Paws & Pals</span></a>
-				<nav class="header__nav">
-					<ul class="flex-style-row">
-						<li><a href="./get-petsitter.html" class="link-active">Найти петситтера</a></li>
-						<li><a href="#services">Услуги</a></li>
-						<li><a href="./about-us.html">О нас</a></li>
-						<li><a href="#questions">Частые вопросы</a></li>
-						<li><a href="#getsitter">Стать ситтером</a></li>
-					</ul>
-				</nav>
-				<div class="header-block flex-style-row">
-					<button type="button" class="header__button button  flex-style-row button-hover"
-						onclick="location.href='auth.html'">
-						<span>Войти</span>
-						<svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M1 17.5L17 1.5M17 1.5V17.5M17 1.5H1" stroke="#C45F27" stroke-width="1.5" />
-						</svg>
-					</button>
-					<div class="header__burger">
-						<div class="line"></div>
-						<div class="line"></div>
-						<div class="line"></div>
-					</div>
-				</div>
-			</div>
-		</header>
-		<section class="no-container">
-			<img src="/images/main-petsitter.jpg" alt="Главная картинка страницы" class="main-img" />
-		</section>
-		<main class="main flex-style-column main-style main-petsitter">
-			<section class="filter-block flex-style-column">
-				<h1 class="title main__title">
-					надежная передержка для вашего питомца<img src="./images/svg/paws-title.svg" alt="paws-title"
-						class="title-icon" />
-				</h1>
-				<form action="#" class="filter flex-style-column form-style ">
-					<a href="#" class="get-behind-petsitter"><span class="span-font-size-14">Уже были у нас?</span> <span
-							class="span-font-size-12">забронируйте прошлого петситтера</span></a>
-					<div class="tabs flex-style-row">
-						<button class="tab-button tab-button-shelter" onclick="showTab('shelter')"><span
-								class="span-text">Передержка</span><span class="span-block">дома
-								у петситтера</span></button>
-						<button class="tab-button tab-button-walk active" onclick="showTab('walk')"><span
-								class="span-text">Выгул</span><span class="span-block">в вашем
-								районе</span></button>
-					</div>
-					<div class="tab-content flex-style-row" id="shelter">
-						<div class="input__block flex-style-column ">
-							<div class="flex-style-column">
-								<p>У меня</p>
-								<div class="inputs-checkbox flex-style-row">
-									<div class="custom-checkbox input-width">
-										<input type="checkbox" class="input-checkbox-button-style" name="change-cat" checked />
-										<label class="input-checkbox-style" for="change-cat">
-											🐈 Кот
-										</label>
-									</div>
-									<div class="custom-checkbox input-width">
-										<input type="checkbox" class="input-checkbox-button-style" name="change-dog" />
-										<label class="input-checkbox-style" for="change-dog">
-											🦮 Собака
-										</label>
-									</div>
-								</div>
-							</div>
-							<div class="flex-style-column">
-								<p>Возраст питомца</p>
-								<div class="inputs-checkbox flex-style-row">
-									<input type="text" placeholder="лет" class="input-border-style" />
-									<input type="text" placeholder="месяцев" class="input-border-style" />
-								</div>
-							</div>
-							<div class="flex-style-column">
-								<p>Размер</p>
-								<div class="inputs-checkbox flex-style-row">
-									<div class="custom-checkbox">
-										<input type="checkbox" class="input-checkbox-button-style" checked />
-										<label class="input-checkbox-style" for="">до 5 кг</label>
-									</div>
-									<div class="custom-checkbox">
-										<input type="checkbox" class="input-checkbox-button-style" />
-										<label class="input-checkbox-style" for="">до 5-10 кг</label>
-									</div>
-									<div class="custom-checkbox">
-										<input type="checkbox" class="input-checkbox-button-style" />
-										<label class="input-checkbox-style" for="">10-20 кг</label>
-									</div>
-									<div class="custom-checkbox">
-										<input type="checkbox" class="input-checkbox-button-style" />
-										<label class="input-checkbox-style" for="">20-40 кг</label>
-									</div>
-									<div class="custom-checkbox">
-										<input type="checkbox" class="input-checkbox-button-style" />
-										<label class="input-checkbox-style" for="">40+ кг</label>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="input__block flex-style-column block-height">
-							<div class="flex-style-column">
-								<p>Дата передержки</p>
-								<div class="inputs-checkbox flex-style-row input-date">
-									<div class="custom-input-date">
-										<input class="input-date" type="date" name="date" placeholder="с"
-											onchange="this.className=(this.value!=''?'has-value':'')" required />
-									</div>
-									<div class="">
-										<input class="input-date" type="date" name="date" placeholder="по"
-											onchange="this.className=(this.value!=''?'has-value':'')" required />
-									</div>
-								</div>
-							</div>
-							<div class="flex-style-column block-height">
-								<p>Адрес</p>
-								<div class="custom-select">
-									<div class="selected">Выберите город</div>
-									<div class="options">
-										<div class="option" data-value="Минск">Минск</div>
-										<div class="option" data-value="Витебск">Витебск</div>
-										<div class="option" data-value="Брест">Брест</div>
-										<div class="option" data-value="Гомель">Гомель</div>
-										<div class="option" data-value="Могилев">Могилев</div>
-									</div>
-									<svg width="20" class="arrow" height="9" viewBox="0 0 20 9" fill="none"
-										xmlns="http://www.w3.org/2000/svg">
-										<path d="M1 1.5L9.38606 8.02249C9.74717 8.30335 10.2528 8.30335 10.6139 8.02249L19 1.5"
-											stroke="#6F6F6F" stroke-width="1.5" stroke-linecap="round" />
-									</svg>
-								</div>
-							</div>
-							<button class="flex-style-row button button-text-style button-hover">
-								Найти петситтера
-								<svg width="28" height="28" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg"
-									class="pawsicon">
-									<use xlink:href="./images/svg/paws.svg#pawsicon"></use>
-								</svg>
-							</button>
-						</div>
-					</div>
-					<div class="tab-content flex-style-row" id="walk">
-						<div class="input__block flex-style-column">
-							<div class="flex-style-column">
-								<p>У меня</p>
-								<div class="inputs-checkbox flex-style-row">
-									<div class="custom-checkbox input-width">
-										<input type="checkbox" class="input-checkbox-button-style" name="change-cat" checked />
-										<label class="input-checkbox-style" for="change-cat">
-											🐈 Кот
-										</label>
-									</div>
-									<div class="custom-checkbox input-width">
-										<input type="checkbox" class="input-checkbox-button-style" name="change-dog" />
-										<label class="input-checkbox-style" for="change-dog">
-											🦮 Собака
-										</label>
-									</div>
-								</div>
-							</div>
-							<div class="flex-style-column">
-								<p>Возраст питомца</p>
-								<div class="inputs-checkbox flex-style-row">
-									<input type="text" placeholder="лет" class="input-border-style" />
-									<input type="text" placeholder="месяцев" class="input-border-style" />
-								</div>
-							</div>
-							<div class="flex-style-column">
-								<p>Размер</p>
-								<div class="inputs-checkbox flex-style-row">
-									<div class="custom-checkbox">
-										<input type="checkbox" class="input-checkbox-button-style" checked />
-										<label class="input-checkbox-style" for="">до 5 кг</label>
-									</div>
-									<div class="custom-checkbox">
-										<input type="checkbox" class="input-checkbox-button-style" />
-										<label class="input-checkbox-style" for="">до 5-10 кг</label>
-									</div>
-									<div class="custom-checkbox">
-										<input type="checkbox" class="input-checkbox-button-style" />
-										<label class="input-checkbox-style" for="">10-20 кг</label>
-									</div>
-									<div class="custom-checkbox">
-										<input type="checkbox" class="input-checkbox-button-style" />
-										<label class="input-checkbox-style" for="">20-40 кг</label>
-									</div>
-									<div class="custom-checkbox">
-										<input type="checkbox" class="input-checkbox-button-style" />
-										<label class="input-checkbox-style" for="">40+ кг</label>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="input__block flex-style-column block-height ">
-							<div class="flex-style-column">
-								<p>Дата передержки</p>
-								<div class="inputs-checkbox flex-style-row input-date">
-									<div class="custom-input-date">
-										<input class="input-date" type="date" name="date" placeholder="с"
-											onchange="this.className=(this.value!=''?'has-value':'')" required />
-									</div>
-									<div class="">
-										<input class="input-date" type="date" name="date" placeholder="по"
-											onchange="this.className=(this.value!=''?'has-value':'')" required />
-									</div>
-								</div>
-							</div>
-							<div class="flex-style-column block-height">
-								<p>Адрес</p>
-								<div class="custom-select">
-									<div class="selected">Выберите город</div>
-									<div class="options">
-										<div class="option" data-value="Минск">Минск</div>
-										<div class="option" data-value="Витебск">Витебск</div>
-										<div class="option" data-value="Брест">Брест</div>
-										<div class="option" data-value="Гомель">Гомель</div>
-										<div class="option" data-value="Могилев">Могилев</div>
-									</div>
-									<svg width="20" class="arrow" height="9" viewBox="0 0 20 9" fill="none"
-										xmlns="http://www.w3.org/2000/svg">
-										<path d="M1 1.5L9.38606 8.02249C9.74717 8.30335 10.2528 8.30335 10.6139 8.02249L19 1.5"
-											stroke="#6F6F6F" stroke-width="1.5" stroke-linecap="round" />
-									</svg>
-								</div>
-							</div>
-							<div class="flex-style-column block-height">
-								<p class="range-slider-text">Максимальная стоимость за 30 мин. прогулки</p>
-								<div class="range-slider-block flex-style-row">
-									<input type="range" class="my-range-slider" min="0" max="100" value="30" />
-									<div class="flex-style-row">
-										<p class="js-range-value">30</p><span>BYN</span>
-									</div>
-								</div>
-							</div>
-							<button class="flex-style-row button button-text-style button-hover" onclick="">
-								Найти петситтера
-								<svg width="28" height="28" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg"
-									class="pawsicon">
-									<use xlink:href="./images/svg/paws.svg#pawsicon"></use>
-								</svg>
-							</button>
-							<p>Сбросить фильтр</p>
-						</div>
-					</div>
-				</form>
-			</section>
-		</main>
-
-		<footer class="footer">
-			<div class="footer__body flex-style-column">
-				<div class="footer__block">
-					<h2 class="footer__title">Контакты</h2>
-					<p class="footer__subtitle">
-						Если у вас возникли вопросы или предложения, пожалуйста, свяжитесь
-						с нами! Мы всегда рады помочь вам.
-					</p>
-				</div>
-				<div class="flex-style-row footer__content">
-					<div class="footer__logo">
-						<a href="/"><svg width="36" height="36" viewBox="0 0 38 38" fill="none"
-								xmlns="http://www.w3.org/2000/svg" class="pawsicon">
-								<use xlink:href="./images/svg/paws.svg#pawsicon"></use>
-							</svg><span>Paws & Pals</span></a>
-					</div>
-					<div class="flex-style-column footer__info">
-						<div class="flex-style-row footer__links">
-							<ul class="flex-style-column">
-								<li><a href="#">Передержка кошек</a></li>
-								<li><a href="#">Передержка собак</a></li>
-								<li><a href="#">Выгул собак </a></li>
-							</ul>
-							<ul class="flex-style-column">
-								<li><a href="#">О нас </a></li>
-								<li><a href="#">Блог </a></li>
-								<li><a href="#">Контакты</a></li>
-							</ul>
-						</div>
-						<div class="flex-style-row footer__address">
-							<div class="adress flex-style-column">
-								<p>Минск, курчатова, 5</p>
-								<div class="social flex-style-row">
-									<a href="#"><img src="./images/svg/logo-tg.svg" alt="telegram" /></a>
-									<a href="#"><img src="./images/svg/logo-vk.svg" alt="vkontakte" /></a>
-									<a href="#"><img src="./images/svg/logo-youtube.svg" alt="youtube" /></a>
-								</div>
-							</div>
-							<div class="info flex-style-column">
-								<a href="tel:+375297766601">+375 (29) 776-66-01</a>
-								<a href="mailto:paws&pals.support@gmail.com">paws&pals.support@gmail.com</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="politic flex-style-row">
-					<a href="#">Условия использования</a>
-					<a href="#">Политика конфиденциальности</a>
-				</div>
-			</div>
-		</footer>
-	</div>
-	<script src="./js/swiper-bundle.min.js"></script>
-	<script src="./js/script.js"></script>
-</body>
-
+      <footer class="footer">
+        <div class="footer__body flex-style-column">
+          <div class="footer__block">
+            <h2 class="footer__title">Контакты</h2>
+            <p class="footer__subtitle">
+              Если у вас возникли вопросы или предложения, пожалуйста, свяжитесь
+              с нами! Мы всегда рады помочь вам.
+            </p>
+          </div>
+          <div class="flex-style-row footer__content">
+            <div class="footer__logo">
+              <a href="/"
+                ><svg
+                  width="36"
+                  height="36"
+                  viewBox="0 0 38 38"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="pawsicon"
+                >
+                  <use xlink:href="./images/svg/paws.svg#pawsicon"></use></svg
+                ><span>Paws & Pals</span></a
+              >
+            </div>
+            <div class="flex-style-column footer__info">
+              <div class="flex-style-row footer__links">
+                <ul class="flex-style-column">
+                  <li><a href="#">Передержка кошек</a></li>
+                  <li><a href="#">Передержка собак</a></li>
+                  <li><a href="#">Выгул собак </a></li>
+                </ul>
+                <ul class="flex-style-column">
+                  <li><a href="#">О нас </a></li>
+                  <li><a href="#">Блог </a></li>
+                  <li><a href="#">Контакты</a></li>
+                </ul>
+              </div>
+              <div class="flex-style-row footer__address">
+                <div class="adress flex-style-column">
+                  <p>Минск, курчатова, 5</p>
+                  <div class="social flex-style-row">
+                    <a href="#"
+                      ><img src="./images/svg/logo-tg.svg" alt="telegram"
+                    /></a>
+                    <a href="#"
+                      ><img src="./images/svg/logo-vk.svg" alt="vkontakte"
+                    /></a>
+                    <a href="#"
+                      ><img src="./images/svg/logo-youtube.svg" alt="youtube"
+                    /></a>
+                  </div>
+                </div>
+                <div class="info flex-style-column">
+                  <a href="tel:+375297766601">+375 (29) 776-66-01</a>
+                  <a href="mailto:paws&pals.support@gmail.com"
+                    >paws&pals.support@gmail.com</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="politic flex-style-row">
+            <a href="#">Условия использования</a>
+            <a href="#">Политика конфиденциальности</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="./js/swiper-bundle.min.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
 </html>

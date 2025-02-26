@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Paws & palls</title>
+    <title>Авторизация/Регистрация</title>
     <link rel="stylesheet" href="./fonts/font.css" />
     <link rel="stylesheet" href="./css/globals.css" />
     <link rel="stylesheet" href="./css/variables.css" />
@@ -14,8 +14,8 @@
     <div class="wrapper flex-style-column">
       <header class="header">
         <div class="header__body flex-style-row">
-          <a class="header__logo flex-style-row" href="/"
-            ><svg
+          <a class="header__logo flex-style-row" href="/">
+            <svg
               width="28"
               height="28"
               viewBox="0 0 38 38"
@@ -23,9 +23,8 @@
               xmlns="http://www.w3.org/2000/svg"
               class="pawsicon"
             >
-              <use xlink:href="./images/svg/paws.svg#pawsicon"></use>
-            </svg>
-            <span>Paws & Pals</span></a
+              <use xlink:href="./images/svg/paws.svg#pawsicon"></use></svg
+            ><span>Paws & Pals</span></a
           >
           <nav class="header__nav">
             <ul class="flex-style-row">
@@ -36,79 +35,36 @@
               <li><a href="./become-petsitter.html">Стать ситтером</a></li>
             </ul>
           </nav>
-          <button
-            type="button"
-            class="button header__button flex-style-row button-hover"
-            onclick="location.href='auth.html'"
-          >
-            <span>Войти</span>
-            <svg
-              width="18"
-              height="19"
-              viewBox="0 0 18 19"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+          <div class="header-block flex-style-row">
+            <button
+              type="button"
+              class="header__button button flex-style-row button-hover"
+              onclick="location.href='auth.html'"
             >
-              <path
-                d="M1 17.5L17 1.5M17 1.5V17.5M17 1.5H1"
-                stroke="#C45F27"
-                stroke-width="1.5"
-              />
-            </svg>
-          </button>
-        </div>
-      </header>
-      <main class="main flex-style-column main-style">
-        <section>
-          <div class="form-component flex-style-column">
-            <h1 class="title">Регистрация</h1>
-            <div class="choise-for-register">
-              <div class="register__body flex-style-column">
-                <p class="text-register">
-                  В качестве кого вы хотите зарегистрироваться?
-                </p>
-                <div class="flex-style-row buttons__block">
-                  <button
-                    class="flex-style-row button button-text-style button-active button-hover button-auth"
-                  >
-                    Как владелец
-                    <svg
-                      width="28"
-                      height="28"
-                      viewBox="0 0 38 38"
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="pawsicon"
-                    >
-                      <use xlink:href="./images/svg/paws.svg#pawsicon"></use>
-                    </svg>
-                  </button>
-                  <button
-                    class="flex-style-row button button-text-style button-hover"
-                  >
-                    Как ситтер/выгульщик
-                    <svg
-                      width="28"
-                      height="28"
-                      viewBox="0 0 38 38"
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="pawsicon"
-                    >
-                      <use xlink:href="./images/svg/paws.svg#pawsicon"></use>
-                    </svg>
-                  </button>
-                </div>
-                <div class="register-link">
-                  Есть профиль на Paws&Pals?<a
-                    href="./auth.html"
-                    class="link-brown"
-                    >Войти в аккаунт</a
-                  >
-                </div>
-              </div>
+              <span>Войти</span>
+              <svg
+                width="18"
+                height="19"
+                viewBox="0 0 18 19"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 17.5L17 1.5M17 1.5V17.5M17 1.5H1"
+                  stroke="#C45F27"
+                  stroke-width="1.5"
+                />
+              </svg>
+            </button>
+            <div class="header__burger">
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
             </div>
           </div>
-        </section>
-      </main>
+        </div>
+      </header>
+      <main class="main flex-style-column main-style"></main>
       <footer class="footer flex-style-column">
         <img src="../images/pets.png" alt="pets" class="footer-pets" />
         <div class="footer__body flex-style-column">
@@ -175,7 +131,7 @@
           </div>
         </div>
       </footer>
+      <script src="./js/script.js"></script>
     </div>
-    <script src="./js/script.js"></script>
   </body>
 </html>
